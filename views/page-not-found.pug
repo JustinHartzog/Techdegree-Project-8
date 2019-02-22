@@ -1,0 +1,10 @@
+extends layout
+
+block content
+
+  h2 #{error.status} #{error.message}
+
+  p.error_text Sorry! We couldn't find the page you were looking for.
+
+  .back_cta
+    a(class="button", href="/books") Back Home

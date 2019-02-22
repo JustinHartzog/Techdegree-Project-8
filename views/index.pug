@@ -1,0 +1,31 @@
+extends layout.pug
+
+block content
+  
+  .container
+    h2.cat_title CATALOGUE
+    include searchBar
+    a(class="add_book_cta", href="/books/new") Add New Book
+
+  //- Table that shows all the books in the DB
+  table
+    thead
+      tr
+        th Title
+        th Author
+        th Genre
+        th Year
+
+    tbody#db_table
+      each book in books
+        tr.book_row
+          td.title_col
+            a(href=`/books/${book.id}`)
+              = book.title  
+          td(class="author_col")= book.author
+          td(class="genre_col")= book.genre
+          td(class="year_col")= book.year 
+
+  .pagination_container
+
+  script(src="../static/js/script.js")

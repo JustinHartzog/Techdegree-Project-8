@@ -1,0 +1,7 @@
+
+if(errors)
+    h2.validation_error Some data is missing!
+    ol.errors_list
+      each error in errors
+        li
+          =error.message
